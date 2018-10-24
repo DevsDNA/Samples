@@ -34,5 +34,7 @@
     <string>XFAlarms</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Necesitamos acceder al calendario para crear eventos.</string>
 </dict>
 </plist>

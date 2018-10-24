@@ -10,7 +10,12 @@
             throw new NotImplementedException();
         }
 
-        public bool CreateAlarm(string title, string description, DateTime time, int id)
+        public bool CreateAlarm(string title, string description, DateTime timeInit, DateTime timeEnd, int alarmMinutes, string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateCalendarForAppAlarms()
         {
             throw new NotImplementedException();
         }
