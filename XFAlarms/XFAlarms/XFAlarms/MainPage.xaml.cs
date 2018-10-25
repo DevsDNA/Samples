@@ -10,6 +10,8 @@ namespace XFAlarms
 {
     public partial class MainPage : ContentPage
     {
+        IAlarmService alarmService;
+
         public MainPage()
         {
             InitializeComponent();
@@ -19,9 +21,15 @@ namespace XFAlarms
         {
             base.OnAppearing();
 
-            CreateButton.Clicked += (s, e) =>
+            alarmService = DependencyService.Get<IAlarmService>();
+
+            CreateButton.Clicked += async (s, e) =>
             {
-                DependencyService.Get<IAlarmService>().CreateAlarm("Prueba 1", "Alarma creada desde una app xamarin forms", DateTime.Now.AddMinutes(-55), DateTime.Now.AddHours(2), 4, "");
+                string alarmId = await alarmService.CreateAlarmAsync("Prueba 1", "Alarma creada desde una app xamarin forms", DateTime.Now.AddMinutes(-55), DateTime.Now.AddHours(2), 4);
+                if (string.IsNullOrWhiteSpace(alarmId))
+                    await DisplayAlert("Error", "No se ha podido crear la alerta", "ok");
+                else
+                    await DisplayAlert("Exito", $"Alerta creada con id:{alarmId}", "ok");
             };
         }
     }

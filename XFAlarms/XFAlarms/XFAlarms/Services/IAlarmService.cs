@@ -1,15 +1,16 @@
 ﻿namespace XFAlarms.Services
 {
     using System;
+    using System.Threading.Tasks;
 
     public interface IAlarmService
     {
-        bool CreateCalendarForAppAlarms();
+        Task<bool> CreateCalendarForAppAlarmsAsync();
 
-        bool CheckIfAlarmAlreadyExist();
+        Task<bool> CheckIfAlarmAlreadyExistAsync(string id);
 
-        bool CreateAlarm(string title, string description, DateTime timeInit, DateTime timeEnd, int alarmMinutes, string id);
+        Task<string> CreateAlarmAsync(string title, string description, DateTime timeInit, DateTime timeEnd, int alarmMinutes);
 
-        bool DeleteAlarm(int id);
+        Task<bool> DeleteAlarmAsync(string id);
     }
 }
