@@ -10,7 +10,8 @@ namespace XFAlarms
 {
     public partial class MainPage : ContentPage
     {
-        IAlarmService alarmService;
+        private string alarmId;
+        private IAlarmService alarmService;
 
         public MainPage()
         {
@@ -25,11 +26,29 @@ namespace XFAlarms
 
             CreateButton.Clicked += async (s, e) =>
             {
-                string alarmId = await alarmService.CreateAlarmAsync("Prueba 1", "Alarma creada desde una app xamarin forms", DateTime.Now.AddMinutes(-55), DateTime.Now.AddHours(2), 4);
+                alarmId = await alarmService.CreateAlarmAsync("Prueba 1", "Alarma creada desde una app xamarin forms", DateTime.Now.AddMinutes(5), DateTime.Now.AddHours(2), 4);
                 if (string.IsNullOrWhiteSpace(alarmId))
                     await DisplayAlert("Error", "No se ha podido crear la alerta", "ok");
                 else
                     await DisplayAlert("Exito", $"Alerta creada con id:{alarmId}", "ok");
+            };
+
+            CheckButton.Clicked += async (s, e) =>
+            {
+                bool exist = await alarmService.CheckIfAlarmAlreadyExistAsync(alarmId);
+                if (exist)
+                    await DisplayAlert("Info", "La alarma existe", "ok");
+                else
+                    await DisplayAlert("Info", "La alarma no existe", "ok");
+            };
+
+            DeleteButton.Clicked += async (s, e) =>
+            {
+                bool deleted = await alarmService.DeleteAlarmAsync(alarmId);
+                if (deleted)
+                    await DisplayAlert("Info", "La alarma ha sido eliminada", "ok");
+                else
+                    await DisplayAlert("error", "No se ha podido eliminar la alarma", "ok");
             };
         }
     }

@@ -6,7 +6,9 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Button x:Name="CreateButton" Text="CreateEvent and Calendar" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="40"/>
+        <Button x:Name="CreateButton" Text="Crear evento" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="40"/>
+        <Button x:Name="CheckButton" Text="Comprobar evento" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="40"/>
+        <Button x:Name="DeleteButton" Text="Eliminar evento" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="40"/>
     </StackLayout>
 
 </ContentPage>
