@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFAlarms"
+             x:Class="XFAlarms.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Button x:Name="CreateButton" Text="Crear evento" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="40"/>
+        <Button x:Name="CheckButton" Text="Comprobar evento" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="40"/>
+        <Button x:Name="DeleteButton" Text="Eliminar evento" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="40"/>
+    </StackLayout>
+
+</ContentPage>
