@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFAnimations"
+             x:Class="XFAnimations.MainPage">
+
+    <StackLayout  HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="FillAndExpand"
+                  Padding="10">
+        
+        <Label x:Name="WelcomeLabel" 
+               Text="Welcome to Xamarin Forms!"
+               VerticalOptions="Start" 
+               HorizontalOptions="CenterAndExpand" 
+               HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="EntryEmail" Placeholder="Email"
+               VerticalOptions="Center"
+               HorizontalOptions="FillAndExpand"/>
+        
+        <Entry x:Name="EntryPassword" Placeholder="Password"
+               VerticalOptions="Center"
+               HorizontalOptions="FillAndExpand"/>
+
+        <Button x:Name="LoginButton" BackgroundColor="PaleGoldenrod" 
+                Text="Login" Clicked="LoginButton_Clicked"/>
+
+        <Button x:Name="StopAnimaton" BackgroundColor="PaleVioletRed" 
+                VerticalOptions="EndAndExpand" 
+                Text="Stop Animaton" Clicked="StopAnimaton_Clicked"/>
+        
+        <Button x:Name="StartAnimaton" BackgroundColor="PaleGreen" 
+                VerticalOptions="End"
+                Text="Start Animaton" Clicked="StartAnimaton_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
