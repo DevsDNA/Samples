@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFColorPicker"
+             x:Class="XFColorPicker.MainPage">
+
+    <Grid>
+        <BoxView x:Name="colorSelected" 
+                 HorizontalOptions="Center" 
+                 VerticalOptions="Start"
+                 HeightRequest="40"
+                 WidthRequest="300"
+                 Margin="30"/>
+
+        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <local:ColorViewBox x:Name="colorPicker" 
+                            HeightRequest="250" 
+                            HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="FillAndExpand"
+                            Margin="10"/>
+
+            <BoxView x:Name="marker" WidthRequest="20" HeightRequest="20" VerticalOptions="Start" HorizontalOptions="Start" IsVisible="True" InputTransparent="True" BackgroundColor="Black"/>
+        </Grid>
+
+        <StackLayout x:Name="ButtonBar" VerticalOptions="End" HorizontalOptions="FillAndExpand" Margin="10" Orientation="Horizontal"/>
+    </Grid>
+
+</ContentPage>
