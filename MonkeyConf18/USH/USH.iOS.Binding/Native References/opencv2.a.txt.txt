@@ -1,0 +1,1 @@
+GitHub tiene una limitacion de 100mb y la libreria estatica de OpenCV 3.4 ocupa 250mb. Simplemente descarga el framework para Xcode y copia aqui el .a

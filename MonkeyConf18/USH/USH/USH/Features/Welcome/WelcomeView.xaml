@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="USH.Features.Welcome.WelcomeView"
+             BackgroundColor="Black">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="Uncovering Superheros!" FontAttributes="Italic" FontSize="45" TextColor="Red"
+               Margin="0,40" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+
+        <FlexLayout x:Name="RootLayout" Grid.Row="1" Wrap="Wrap" VerticalOptions="StartAndExpand" 
+                    JustifyContent="Center" AlignContent="Center">
+            <Image x:Name="BlackWidowBtn" Source="BlackWidow.png" WidthRequest="260" HeightRequest="190" Margin="10" Aspect="AspectFill"/>
+            <Image x:Name="SupermanBtn" Source="Superman.png" WidthRequest="260" HeightRequest="190" Margin="10" Aspect="AspectFill"/>
+            <Image x:Name="IronmanBtn" Source="Ironman.png" WidthRequest="260" HeightRequest="190" Margin="10" Aspect="AspectFill"/>
+        </FlexLayout>
+    </Grid>
+</ContentPage>
