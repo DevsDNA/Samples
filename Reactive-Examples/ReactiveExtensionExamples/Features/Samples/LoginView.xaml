@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:base="clr-namespace:ReactiveExtensionExamples.Base"
+                              xmlns:me="clr-namespace:ReactiveExtensionExamples.Features.Samples"
+                              x:Class="ReactiveExtensionExamples.Features.Samples.LoginView"
+                              x:TypeArguments="me:LoginViewModel"
+                              Title="RX - Login">
+    <ContentPage.Content>
+        <StackLayout Padding="10"
+            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Label Text="User"/>
+            <Entry x:Name="userEntry" AutomationId="userEntry" Placeholder="User"
+                   HorizontalOptions="FillAndExpand"/>
+            <Label Text="Password"/>
+            <Entry x:Name="userPassword" AutomationId="userEntry" Placeholder="Password" IsPassword="True"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <ActivityIndicator x:Name="progressActivity" IsRunning="True" IsVisible="False"
+                               VerticalOptions="CenterAndExpand"/>
+            <Button x:Name="doLoginButon" Text="Login" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</base:BaseReactiveContentPage>

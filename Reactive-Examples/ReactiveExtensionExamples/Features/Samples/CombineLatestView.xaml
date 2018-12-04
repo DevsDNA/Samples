@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:base="clr-namespace:ReactiveExtensionExamples.Base"
+                              xmlns:me="clr-namespace:ReactiveExtensionExamples.Features.Samples"
+                              xmlns:styles="clr-namespace:ReactiveExtensionExamples.Values"
+                              x:Class="ReactiveExtensionExamples.Features.Samples.CombineLatestView"                              
+                              x:TypeArguments="me:CombineLatestViewModel"
+                              Title="RX - Combine Lastest">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+              Padding="20" Spacing="20">
+            <BoxView x:Name="boxViewColor" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+                     HeightRequest="200" CornerRadius="30"/>
+            <Label x:Name="redColorLabel" Text="Red" TextColor="{x:Static styles:Styles.BlueAccent}"/>
+            <Slider x:Name="redColor" Minimum="0" Maximum="255"/>
+            
+            <Label x:Name="greenColorLabel" Text="Green" TextColor="{x:Static styles:Styles.BlueAccent}"/>
+            <Slider x:Name="greenColor" Minimum="0" Maximum="255"/>
+            
+            <Label x:Name="blueColorLabel" Text="Blue" TextColor="{x:Static styles:Styles.BlueAccent}"/>
+            <Slider x:Name="blueColor"  Minimum="0" Maximum="255"/>
+        </StackLayout>
+    </ContentPage.Content>
+</base:BaseReactiveContentPage>

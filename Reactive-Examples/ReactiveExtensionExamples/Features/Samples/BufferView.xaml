@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:base="clr-namespace:ReactiveExtensionExamples.Base"
+                              xmlns:me="clr-namespace:ReactiveExtensionExamples.Features.Samples"
+                              x:Class="ReactiveExtensionExamples.Features.Samples.BufferView"                              
+                              x:TypeArguments="me:BufferViewModel"
+                              Title="RX - Buffer">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+              Padding="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Entry x:Name="textEntry" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                   Placeholder="Enter some text"/>
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                        Padding="8">
+                <StackLayout x:Name="lastEntries" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</base:BaseReactiveContentPage>

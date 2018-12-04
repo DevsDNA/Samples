@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:base="clr-namespace:ReactiveExtensionExamples.Base"
+                              xmlns:me="clr-namespace:ReactiveExtensionExamples.Features.Samples"
+                              xmlns:styles="clr-namespace:ReactiveExtensionExamples.Values"
+                              x:Class="ReactiveExtensionExamples.Features.Samples.MergeView"                              
+                              x:TypeArguments="me:MergeViewModel"
+                              Title="RX - Merge">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+              Padding="8">
+            <Label Text="Who broke the build?" 
+                   FontAttributes="Bold"
+                   TextColor="{x:Static styles:Styles.BlueAccent}"
+                   FontSize="Medium"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <Button x:Name="yerayButton" Text="Yeray" 
+                    BackgroundColor="{x:Static styles:Styles.BlueAccent}"/>
+            <Button x:Name="chemaButton" Text="Chema"
+                    BackgroundColor="{x:Static styles:Styles.BlueAccent}"/>
+            <Button x:Name="marcoAntionioButton" Text="Marco Antonio"
+                    BackgroundColor="{x:Static styles:Styles.BlueAccent}"/>
+            <Button x:Name="cianiButton" Text="Ciani"
+                    BackgroundColor="{x:Static styles:Styles.BlueAccent}"/>
+
+            <Label x:Name="resultLabel"
+                   TextColor="{x:Static styles:Styles.BlueAccent}"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</base:BaseReactiveContentPage>
