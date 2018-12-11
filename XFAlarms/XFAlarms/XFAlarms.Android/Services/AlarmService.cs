@@ -116,7 +116,7 @@ namespace XFAlarms.Droid.Services
             var calendarsUri = CalendarContract.Calendars.ContentUri;
             var loader = new Android.Support.V4.Content.CursorLoader(Application.Context, calendarsUri, calendarsProjection, null, null, null);
             var cursor = (ICursor)loader.LoadInBackground();
-            cursor.MoveToLast();
+            cursor.MoveToFirst();
             defaultCalendarId = cursor.GetInt(cursor.GetColumnIndex(calendarsProjection[0]));
         }
 
