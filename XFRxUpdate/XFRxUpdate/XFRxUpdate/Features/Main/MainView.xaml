@@ -8,12 +8,22 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+            <Entry x:Name="SearchTextLabel" Placeholder="Busca un modelo"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="AscendingButton" Text="Ascending" BackgroundColor="Transparent"/>
+                <Button Grid.Column="1" x:Name="DescendingButton" Text="Descending" BackgroundColor="Transparent"/>
+            </Grid>
 
-            <ListView x:Name="PlanesListView" SeparatorVisibility="None">
+            <ListView Grid.Row="2" x:Name="PlanesListView" SeparatorVisibility="None"
+                      IsPullToRefreshEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -24,8 +34,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-            <Button x:Name="AddButton" Grid.Row="1" Text="Add"/>
         </Grid>
     </ContentPage.Content>
 </rxui:ReactiveContentPage>
