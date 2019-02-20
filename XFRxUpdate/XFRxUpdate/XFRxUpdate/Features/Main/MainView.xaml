@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rxui:ReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                          xmlns:me="clr-namespace:XFRxUpdate.Features.Main"
+                          x:Class="XFRxUpdate.Features.Main.MainView"
+                          x:TypeArguments="me:MainViewModel">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Entry x:Name="SearchTextLabel" Placeholder="Busca un modelo"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="AscendingButton" Text="Ascending" BackgroundColor="Transparent"/>
+                <Button Grid.Column="1" x:Name="DescendingButton" Text="Descending" BackgroundColor="Transparent"/>
+            </Grid>
+
+            <ListView Grid.Row="2" x:Name="PlanesListView" SeparatorVisibility="None"
+                      IsPullToRefreshEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="14">
+                                <Label Text="{Binding Name}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</rxui:ReactiveContentPage>

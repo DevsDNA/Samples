@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheAppOfTheDoctor.Features.Doctor.DoctorDescriptionView">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid x:Name="MainGrid"
+                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Image x:Name="ImgDoctor"
+                       Grid.Row="0"
+                       Source="imageDescription.png"
+                       VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+                <Label x:Name="TxtDoctor"
+                       Grid.Row="1"
+                       Text="{Binding TextDescriptionDoctor}" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" Margin="20,0"
+                       VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+                <ActivityIndicator x:Name="IsLoading"
+                                   Grid.Row="0" Grid.RowSpan="2"
+                                   IsRunning="True"
+                                   IsVisible="{Binding IsLoading}"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

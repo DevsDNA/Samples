@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;DOCTOR10;DOCTOR11;DOCTOR12;DOCTOR13</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <!--TODO: Configuration name force to ensure solution config names-->
+  <PropertyGroup Condition="'$(Configuration)' == 'DOCTOR10'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'DOCTOR11'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'DOCTOR12'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'DOCTOR13'" />
+
+  <ItemGroup>
+    <Compile Remove="Environments/*/DoctorApiProvider.cs" />
+    <Compile Remove="Environments/*/AppInfo.cs" />
+    <None Include="Environments/*/DoctorApiProvider.cs" />
+    <None Include="Environments/*/AppInfo.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'=='Debug' OR '$(Configuration)'=='Ad-Hoc' OR '$(Configuration)'=='AppStore' OR '$(Configuration)'=='Release'">
+    <None Remove="Environments/Default/DoctorApiProvider.cs" />
+    <None Remove="Environments/Default/AppInfo.cs" />
+    <Compile Include="Environments/Default/DoctorApiProvider.cs" />
+    <Compile Include="Environments/Default/AppInfo.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'!='Debug' AND '$(Configuration)'!='Ad-Hoc' AND '$(Configuration)'!='AppStore' AND '$(Configuration)'!='Release'">
+    <None Remove="Environments/$(Configuration)/DoctorApiProvider.cs" />
+    <None Remove="Environments/$(Configuration)/AppInfo.cs" />
+    <Compile Include="Environments/$(Configuration)/DoctorApiProvider.cs" />
+    <Compile Include="Environments/$(Configuration)/AppInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.12.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.12.0" />
+    <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.12.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Features\Doctor\DoctorDescriptionView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
