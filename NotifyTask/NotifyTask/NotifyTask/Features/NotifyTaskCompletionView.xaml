@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotifyTask.Features.NotifyTaskCompletionView">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <!--<Label Text="{Binding UrlByteCount.Result}"/>-->
+            <Label Text="Loading..." IsVisible="{Binding UrlByteCount.IsNotCompleted}"/>
+            <Label Text="{Binding UrlByteCount.Result}" IsVisible="{Binding UrlByteCount.IsSuccessfullyCompleted}"/>
+            <Label Text="{Binding UrlByteCount.ErrorMessage}"  IsVisible="{Binding UrlByteCount.IsFaulted}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
