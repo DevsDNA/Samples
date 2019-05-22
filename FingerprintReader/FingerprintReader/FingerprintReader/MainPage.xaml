@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FingerprintReader"
+             x:Class="FingerprintReader.MainPage">
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Button x:Name="BtnStatus" Text="Check status" HorizontalOptions="Center" VerticalOptions="Center" Clicked="BtnStatus_Clicked" />
+        <Label x:Name="LblStatus" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Button x:Name="BtnAuthenticate" Text="Authenticate" Margin="0,50,0,0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="BtnAuthenticate_Clicked" />
+        <Label x:Name="LblAuthenticate" HorizontalOptions="Center" VerticalOptions="Center" />
+    </StackLayout>
+
+</ContentPage>
