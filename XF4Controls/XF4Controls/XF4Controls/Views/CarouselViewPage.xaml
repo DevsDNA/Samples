@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"             
+             x:Class="XF4Controls.Views.CarouselViewPage"
+             Title="Carousel View">
+    
+    <ContentPage.Content>
+        <CarouselView ItemsSource="{Binding Items}" PeekAreaInsets="200">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="20">
+                        <Frame BorderColor="Gray" CornerRadius="8">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Text="Tarjeta" FontAttributes="Bold" FontSize="14" 
+                                       HorizontalOptions="Center" VerticalOptions="Center" />
+                                <Label Grid.Row="1" Text="{Binding .}" FontSize="12" 
+                                       HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </ContentPage.Content>
+    
+</ContentPage>
