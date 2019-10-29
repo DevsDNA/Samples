@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsingFonts.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="PoppinsBold" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Poppins-Bold"/>
+                <On Platform="Android" Value="Poppins-Bold.ttf#Poppins-Bold"/>
+            </OnPlatform>
+
+            <OnPlatform x:Key="PoppinsLight" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Poppins-Light"/>
+                <On Platform="Android" Value="Poppins-Light.ttf#Poppins-Light"/>
+            </OnPlatform>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

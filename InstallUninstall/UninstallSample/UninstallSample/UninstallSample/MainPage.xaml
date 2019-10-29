@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="UninstallSample.MainPage">
+
+    <StackLayout>
+		<!-- Place new controls here -->
+		<Button x:Name="BtnUninstallFacebook"
+				Text="Uninstall Facebook" 
+				Command="{Binding UninstallFacebookCommand}"
+				HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+		
+		<Button x:Name="BtnUninstallTPI"
+				Text="Install Facebook" 
+				Command="{Binding InstallFacebookCommand}"
+				HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+	</StackLayout>
+
+</ContentPage>

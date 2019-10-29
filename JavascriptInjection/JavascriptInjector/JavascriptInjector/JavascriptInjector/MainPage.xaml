@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:JavascriptInjector"
+             mc:Ignorable="d"
+             x:Class="JavascriptInjector.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <controls:CustomWebView x:Name="cwv" 
+                                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                                Source="https://www.bing.com/"
+                                SearchPreseed="Cwv_SearchPreseed"/>
+
+        <Button x:Name="btnText"
+                Grid.Row="1" Grid.Column="0"
+                Text="Text"
+                Clicked="BtnText_Clicked" />
+        <Button x:Name="btnSearch"
+                Grid.Row="1" Grid.Column="1"
+                Text="Search"
+                Clicked="BtnSearch_Clicked" />
+        <Button x:Name="btnObserve"
+                Grid.Row="1" Grid.Column="2"
+                Text="Observe"
+                Clicked="BtnObserve_Clicked" />
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.851321-pre3" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\CarouselViewPage.xaml.cs">
+      <DependentUpon>CarouselViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CheckBoxPage.xaml.cs">
+      <DependentUpon>CheckBoxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RefreshViewPage.xaml.cs">
+      <DependentUpon>RefreshViewPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
