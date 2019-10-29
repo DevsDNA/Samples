@@ -49,7 +49,7 @@ namespace DisplayService.Droid
             }
         }
 
-        public static Android.Views.View ConvertFormsToNative(Xamarin.Forms.View view, Display display)
+        private static Android.Views.View ConvertFormsToNative(Xamarin.Forms.View view, Display display)
         {
             Android.Graphics.Point size = new Android.Graphics.Point();
             display.GetRealSize(size);
