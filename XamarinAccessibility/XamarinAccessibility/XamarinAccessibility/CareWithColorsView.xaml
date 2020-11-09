@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.CareWithColorsView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Frame HeightRequest="200" 
+                   Margin="20"
+                   HorizontalOptions="FillAndExpand" >
+
+                <Grid RowDefinitions="Auto, Auto, Auto"
+                      RowSpacing="10">
+
+                    <StackLayout Orientation="Horizontal"
+                                 Spacing="10"
+                                 Margin="0,0,0,10"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+                        <BoxView Color="Red" HeightRequest="20" WidthRequest="20" />
+                        <Label Text="Hombre" TextColor="Red" />
+                        <BoxView Color="Green" HeightRequest="20" WidthRequest="20" Margin="10,0,0,0"/>
+                        <Label Text="Mujer" TextColor="Green" />
+                    </StackLayout>
+                    
+                    <Label Grid.Row="1" Text="Yeray" TextColor="Red" />
+                    <Label Grid.Row="2" Text="Beatriz" TextColor="Green" />
+                </Grid>
+            </Frame>
+
+            <Frame HeightRequest="200" 
+                   Margin="20"
+                   HorizontalOptions="FillAndExpand" >
+
+                <Grid RowDefinitions="Auto, Auto, Auto"
+                      ColumnDefinitions="50, *"
+                      RowSpacing="10">
+
+                    <StackLayout Grid.ColumnSpan="2" 
+                                 Orientation="Horizontal"
+                                 Spacing="10"
+                                 Margin="0,0,0,10"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+                        <Image HeightRequest="20" WidthRequest="20" Source="man.png"/>
+                        <Label Text="Hombre" />
+                        <Image HeightRequest="20" WidthRequest="20" Source="woman.png" Margin="10,0,0,0"/>
+                        <Label Text="Mujer" />
+                    </StackLayout>
+
+                    <Image Grid.Row="1" Grid.Column="0" HeightRequest="20" WidthRequest="20" Source="man.png"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="Yeray" />
+
+                    <Image Grid.Row="2" Grid.Column="0" HeightRequest="20" WidthRequest="20" Source="woman.png" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="Beatriz" />
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

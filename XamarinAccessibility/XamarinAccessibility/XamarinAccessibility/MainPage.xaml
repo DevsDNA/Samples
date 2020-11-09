@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.MainPage">
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <Button x:Name="btTextSize" Text="Tamaño de texto" Clicked="btTextSize_Clicked" />
+        <Button x:Name="btHighContrast" Text="Alto contraste" Clicked="btHighContrast_Clicked" />
+        <Button x:Name="btCareWithColors" Text="Cuidado con los colores" Clicked="btCareWithColors_Clicked" />
+        <Button x:Name="btButtonSize" Text="Tamaño de botones" Clicked="btButtonSize_Clicked" />
+        <Button x:Name="btImageAlternativeText" Text="Texto alternativo en imágenes" Clicked="btImageAlternativeText_Clicked" />
+        <Button x:Name="btInterfaceDescriptor" Text="Descriptor de interfaz" Clicked="btInterfaceDescriptor_Clicked" />
+        <Button x:Name="btAccessibleNavigation" Text="Navegación accesible" Clicked="btAccessibleNavigation_Clicked" />
+        <Button x:Name="btAccessibleActions" Text="Procesos accesibles" Clicked="btAccessibleActions_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

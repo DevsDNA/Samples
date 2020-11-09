@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.HighContrastView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Frame BackgroundColor="Black" 
+                   HeightRequest="200" 
+                   Margin="20"
+                   HorizontalOptions="FillAndExpand" >
+                
+                <Label Text="Contraste incorrecto" TextColor="DarkGreen" />
+            </Frame>
+
+            <Frame BackgroundColor="Black" 
+                   HeightRequest="200" 
+                   Margin="20"
+                   HorizontalOptions="FillAndExpand" >
+
+                <Label Text="Contraste correcto" TextColor="White" />
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

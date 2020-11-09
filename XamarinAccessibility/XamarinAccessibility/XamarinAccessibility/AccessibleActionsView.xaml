@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.AccessibleActionsView">
+    <ContentPage.Content>
+      <Grid RowDefinitions="50, 50"
+            Margin="20"
+            HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Button x:Name="BtnUndefinedAction" Text="Proceso indefinido" Clicked="BtnUndefinedAction_Clicked" />
+            <ActivityIndicator x:Name="AiUndefinedAction" Color="Red" IsRunning="False" IsVisible="False" />
+
+            <Button x:Name="BtnDefinedAction" Grid.Row="1" 
+                    Text="Proceso definido" Clicked="BtnDefinedAction_Clicked" />
+            <ProgressBar x:Name="PbDefinedAction" Grid.Row="1" 
+                         BackgroundColor="Gray" ProgressColor="Red" IsVisible="False" Progress="0"/>
+        </Grid>
+  </ContentPage.Content>
+</ContentPage>
