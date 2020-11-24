@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-                <Frame HeightRequest="200" 
+                <Frame HeightRequest="250" 
                        Margin="20"
                        HorizontalOptions="FillAndExpand" >
 
@@ -33,7 +33,7 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame HeightRequest="200" 
+                <Frame HeightRequest="250" 
                        Margin="20"
                        HorizontalOptions="FillAndExpand" >
 
@@ -46,7 +46,7 @@
                         <Entry AutomationProperties.Name="Nombre" AutomationProperties.HelpText="Introduzca su nombre"/>
 
                         <Label Text="Género" AutomationProperties.IsInAccessibleTree="False"/>
-                        <Picker AutomationProperties.Name="Género" AutomationProperties.HelpText="Seleccione su genero">
+                        <Picker AutomationProperties.Name="Género" AutomationProperties.HelpText="Seleccione su género">
                             <Picker.Items>
                                 <x:String>Hombre</x:String>
                                 <x:String>Mujer</x:String>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinAccessibility.ImageAlternativeTextView">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" AutomationProperties.IsInAccessibleTree="False">
             <Frame HeightRequest="200" 
                    Margin="20"
                    BackgroundColor="Blue"

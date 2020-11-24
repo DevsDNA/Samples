@@ -49,5 +49,10 @@ namespace XamarinAccessibility
         {
             await Navigation.PushAsync(new AccessibleActionsView());
         }
+
+        private async void btShowFunctionality_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ShowFunctionality());
+        }
     }
 }

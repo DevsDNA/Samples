@@ -5,11 +5,11 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-                <Frame HeightRequest="100" 
+                <Frame HeightRequest="150" 
                        Margin="20"
                        HorizontalOptions="FillAndExpand" >
 
-                    <Grid RowDefinitions="Auto, Auto, Auto"
+                    <Grid RowDefinitions="Auto, 40, 40"
                           ColumnDefinitions="*, *, *">
 
                         <Label Grid.ColumnSpan="3" 
@@ -26,11 +26,11 @@
                     </Grid>
                 </Frame>
 
-                <Frame HeightRequest="100" 
+                <Frame HeightRequest="150" 
                        Margin="20"
                        HorizontalOptions="FillAndExpand" >
 
-                    <Grid RowDefinitions="Auto, Auto, Auto"
+                    <Grid RowDefinitions="Auto, 40, 40"
                           ColumnDefinitions="*, *, *">
                         
                         <Label Grid.ColumnSpan="3" 

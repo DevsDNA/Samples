@@ -12,6 +12,7 @@
         <Button x:Name="btInterfaceDescriptor" Text="Descriptor de interfaz" Clicked="btInterfaceDescriptor_Clicked" />
         <Button x:Name="btAccessibleNavigation" Text="Navegación accesible" Clicked="btAccessibleNavigation_Clicked" />
         <Button x:Name="btAccessibleActions" Text="Procesos accesibles" Clicked="btAccessibleActions_Clicked"/>
+        <Button x:Name="btShowFunctionality" Text="Funcionalidades accesibles" Clicked="btShowFunctionality_Clicked"/>
     </StackLayout>
 
 </ContentPage>
