@@ -6,9 +6,9 @@ using Xamarin.Forms.Xaml;
 namespace XamarinAccessibility
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ShowFunctionality : ContentPage
+    public partial class AccessibleSwipe : ContentPage
     {
-        public ShowFunctionality()
+        public AccessibleSwipe()
         {
             InitializeComponent();
         }

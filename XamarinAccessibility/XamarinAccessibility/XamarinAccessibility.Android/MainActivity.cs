@@ -17,7 +17,6 @@ namespace XamarinAccessibility.Droid
 
             base.OnCreate(savedInstanceState);
 
-            Forms.SetFlags("SwipeView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

@@ -19,9 +19,15 @@
     <Compile Update="AccessibleActionsView.xaml.cs">
       <DependentUpon>AccessibleActionsView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="AccessibleSwipe.xaml.cs">
+      <DependentUpon>AccessibleSwipe.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="AccessibleDragAndDrop.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="AccessibleNavigationView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -40,7 +46,7 @@
     <EmbeddedResource Update="InterfaceDescriptorView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ShowFunctionality.xaml">
+    <EmbeddedResource Update="AccessibleSwipe.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TextSizeView.xaml">

@@ -8,6 +8,7 @@ namespace XamarinAccessibility
     {
         public App()
         {
+            Device.SetFlags(new string[] { "DragAndDrop_Experimental", "SwipeView_Experimental" });
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage());
         }

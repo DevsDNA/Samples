@@ -20,7 +20,6 @@ namespace XamarinAccessibility.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.SetFlags("SwipeView_Experimental");
             Forms.Init();
             LoadApplication(new App());
 

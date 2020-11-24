@@ -50,9 +50,14 @@ namespace XamarinAccessibility
             await Navigation.PushAsync(new AccessibleActionsView());
         }
 
-        private async void btShowFunctionality_Clicked(object sender, EventArgs e)
+        private async void btAccessibleSwipe_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ShowFunctionality());
+            await Navigation.PushAsync(new AccessibleSwipe());
+        }
+
+        private async void btAccessibleDragAndDrop_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AccessibleDragAndDrop());
         }
     }
 }
