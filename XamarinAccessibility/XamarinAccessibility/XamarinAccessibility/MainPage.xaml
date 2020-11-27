@@ -4,16 +4,16 @@
              x:Class="XamarinAccessibility.MainPage">
 
     <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-        <Button x:Name="btTextSize" Text="Tamaño de texto" Clicked="btTextSize_Clicked" />
-        <Button x:Name="btHighContrast" Text="Alto contraste" Clicked="btHighContrast_Clicked" />
-        <Button x:Name="btCareWithColors" Text="Cuidado con los colores" Clicked="btCareWithColors_Clicked" />
-        <Button x:Name="btButtonSize" Text="Tamaño de botones" Clicked="btButtonSize_Clicked" />
-        <Button x:Name="btImageAlternativeText" Text="Texto alternativo en imágenes" Clicked="btImageAlternativeText_Clicked" />
-        <Button x:Name="btInterfaceDescriptor" Text="Descriptor de interfaz" Clicked="btInterfaceDescriptor_Clicked" />
-        <Button x:Name="btAccessibleNavigation" Text="Navegación accesible" Clicked="btAccessibleNavigation_Clicked" />
-        <Button x:Name="btAccessibleActions" Text="Procesos accesibles" Clicked="btAccessibleActions_Clicked"/>
-        <Button x:Name="btAccessibleSwipe" Text="Swipe accesible" Clicked="btAccessibleSwipe_Clicked"/>
-        <Button x:Name="btAccessibleDragAndDrop" Text="Drag and drop accesible" Clicked="btAccessibleDragAndDrop_Clicked"/>
+        <Button x:Name="btTextSize" Text="1. Tamaño de texto" Clicked="btTextSize_Clicked" />
+        <Button x:Name="btHighContrast" Text="2. Alto contraste" Clicked="btHighContrast_Clicked" />
+        <Button x:Name="btCareWithColors" Text="2. Cuidado con los colores" Clicked="btCareWithColors_Clicked" />
+        <Button x:Name="btButtonSize" Text="3. Tamaño de botones" Clicked="btButtonSize_Clicked" />
+        <Button x:Name="btAccessibleSwipe" Text="3. Swipe accesible" Clicked="btAccessibleSwipe_Clicked"/>
+        <Button x:Name="btAccessibleDragAndDrop" Text="3. Drag and drop accesible" Clicked="btAccessibleDragAndDrop_Clicked"/>
+        <Button x:Name="btImageAlternativeText" Text="4. Texto alternativo en imágenes" Clicked="btImageAlternativeText_Clicked" />
+        <Button x:Name="btInterfaceDescriptor" Text="4. Descriptor de interfaz" Clicked="btInterfaceDescriptor_Clicked" />
+        <Button x:Name="btAccessibleNavigation" Text="4. Navegación accesible" Clicked="btAccessibleNavigation_Clicked" />
+        <Button x:Name="btAccessibleActions" Text="5. Procesos accesibles" Clicked="btAccessibleActions_Clicked"/>
     </StackLayout>
 
 </ContentPage>
