@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFCustomTemplates.MainPage">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Button x:Name="BtViewTemplateOne" Text="View template example one" Clicked="BtViewTemplateOne_Clicked" />
+        <Button x:Name="BtViewTemplateTwo" Text="View template example two" Clicked="BtViewTemplateTwo_Clicked" />
+        <Button x:Name="BtViewTemplateWithStyle" Text="View template with style example" Clicked="BtViewTemplateWithStyle_Clicked" />
+        <Button x:Name="BtReplaceControlTemplate" Text="Replace control template example" Clicked="BtReplaceControlTemplate_Clicked" />
+        <Button x:Name="BtPageTemplate" Text="Page template example" Clicked="BtPageTemplate_Clicked" />
+    </StackLayout>
+
+</ContentPage>

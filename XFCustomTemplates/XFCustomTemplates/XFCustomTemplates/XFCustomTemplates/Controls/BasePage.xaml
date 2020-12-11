@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="XFCustomTemplates.Controls.BasePage"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="TopToolBarTemplate">
+            <Grid RowDefinitions="80, *" 
+                  ColumnDefinitions="80, *, 80">
+
+                <BoxView Grid.ColumnSpan="3" Color="{TemplateBinding ToolBarColor}" />
+                <ImageButton Source="back.png"
+                             Aspect="AspectFit"
+                             Clicked="BackButton_Clicked"
+                             HeightRequest="48" WidthRequest="48"
+                             HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Column="1" 
+                       Text="{TemplateBinding Title}"
+                       TextColor="White"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+                <ImageButton Grid.Column="2" 
+                             Source="change.png"
+                             Aspect="AspectFit"
+                             Clicked="ChangeButton_Clicked"
+                             HeightRequest="48" WidthRequest="48"
+                             HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <ContentPresenter Grid.Row="1" Grid.ColumnSpan="3" />
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="BottomToolBarTemplate">
+            <Grid RowDefinitions="*, 80" 
+                  ColumnDefinitions="80, *, 80">
+
+                <ContentPresenter Grid.ColumnSpan="3" />
+                
+                <BoxView Grid.Row="1" Grid.ColumnSpan="3" Color="{TemplateBinding ToolBarColor}" />
+                <ImageButton Grid.Row="1" Source="back.png"
+                             Aspect="AspectFit"
+                             Clicked="BackButton_Clicked"
+                             HeightRequest="48" WidthRequest="48"
+                             HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Row="1" Grid.Column="1" 
+                       Text="{TemplateBinding Title}"
+                       TextColor="White"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+                <ImageButton Grid.Row="1" Grid.Column="2" 
+                             Source="change.png"
+                             Aspect="AspectFit"
+                             Clicked="ChangeButton_Clicked"
+                             HeightRequest="48" WidthRequest="48"
+                             HorizontalOptions="Center" VerticalOptions="Center" />
+
+                
+            </Grid>
+        </ControlTemplate>
+    </ContentPage.Resources>
+</ContentPage>

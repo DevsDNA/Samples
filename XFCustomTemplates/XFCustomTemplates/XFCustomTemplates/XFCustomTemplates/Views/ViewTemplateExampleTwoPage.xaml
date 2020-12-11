@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:XFCustomTemplates.Controls"
+             x:Class="XFCustomTemplates.Views.ViewTemplateExampleTwoPage">
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="InfoViewRowsTemplate">
+            <Frame BindingContext="{Binding Source={RelativeSource TemplatedParent}}"
+                   BackgroundColor="{Binding FillColor}"
+                   BorderColor="{Binding BorderColor}"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   Padding="8"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <Grid RowDefinitions="Auto, Auto" >
+                    <Label Grid.Row="0"
+                           Text="{Binding Title}"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start" />
+                    <Label Grid.Row="1"
+                           Text="{Binding Description}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start" />
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="InfoViewColumnsTemplate">
+            <Frame BindingContext="{Binding Source={RelativeSource TemplatedParent}}"
+                   BackgroundColor="{Binding FillColor}"
+                   BorderColor="{Binding BorderColor}"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   Padding="8"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <Grid ColumnDefinitions="*, *" >
+                    <Label Grid.Column="0"
+                           Text="{Binding Title}"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start" />
+                    <Label Grid.Column="1"
+                           Text="{Binding Description}"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start" />
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="10">
+            <controls:InfoView Title="Jorge"
+                               Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit dolor, convallis non interdum."
+                               BorderColor="Red"
+                               FillColor="Green"
+                               ControlTemplate="{StaticResource InfoViewRowsTemplate}" />
+
+            <controls:InfoView Title="Jorge"
+                               Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit dolor, convallis non interdum."
+                               BorderColor="Yellow"
+                               FillColor="White"
+                               ControlTemplate="{StaticResource InfoViewColumnsTemplate}" />
+
+            <controls:InfoView Title="{Binding InfoTitle}"
+                               Description="{Binding InfoDescription}"
+                               BorderColor="Red"
+                               FillColor="Green"
+                               ControlTemplate="{StaticResource InfoViewRowsTemplate}" />
+
+            <controls:InfoView Title="{Binding InfoTitle}"
+                               Description="{Binding InfoDescription}"
+                               BorderColor="Yellow"
+                               FillColor="White"
+                               ControlTemplate="{StaticResource InfoViewColumnsTemplate}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
