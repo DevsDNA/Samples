@@ -45,7 +45,7 @@
     <Grid ColumnDefinitions="120, 120, 120"
           RowDefinitions="120"
           Margin="10"
-          VerticalOptions="Center">
+          VerticalOptions="Center" HorizontalOptions="Center">
 
         <RadioButton Grid.Column="0"
                      GroupName="Group1"
