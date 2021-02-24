@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="XFShapes.MainPage"
+             ios:Page.UseSafeArea="true">
+
+    <Grid RowDefinitions="100, 50, Auto, Auto">
+        
+        <Polyline Grid.Row="1" Points="0 0, 50 50, 250 50, 300 0"
+                  Aspect="Fill"
+                  Stroke="Blue"
+                  StrokeThickness="1"
+                  StrokeLineJoin="Round" 
+                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+        <Ellipse Grid.RowSpan="2" 
+                 WidthRequest="100" HeightRequest="100"
+                 Stroke="Blue"
+                 Fill="WhiteSmoke" 
+                 HorizontalOptions="Center" VerticalOptions="Center"/>
+
+        <Path Grid.RowSpan="2" 
+              Fill="#3498db"
+              Aspect="Uniform"
+              WidthRequest="75" 
+              Data="M 75.6446,45 C 72.2146,45.0073 68.857,46.9543 67.1304,49.9245 L 40.2748,96.5755 C 38.5751,99.5537 38.5751,103.446 40.2748,106.424 L 67.1304,153.076 C 68.8572,156.046 72.2146,157.993 75.6446,158 L 129.355,158 C 132.785,157.993 136.143,156.046 137.87,153.076 L 164.725,106.424 C 166.425,103.446 166.425,99.5537 164.725,96.5755 L 137.87,49.9245 C 136.143,46.9543 132.785,45.0067 129.355,45 L 75.6446,45 75.6446,45 Z M 76.132,72.2914 C 76.2058,72.2841 76.2832,72.2841 76.3572,72.2914 L 85.6215,72.2914 C 86.0316,72.2999 86.4294,72.5369 86.6342,72.8929 L 102.35,100.899 C 102.429,101.037 102.48,101.191 102.499,101.35 102.519,101.191 102.57,101.037 102.649,100.899 L 118.327,72.8929 C 118.538,72.5261 118.955,72.2878 119.377,72.2914 L 128.641,72.2914 C 129.462,72.2987 130.076,73.332 129.692,74.0582 L 114.351,101.5 129.692,128.904 C 130.113,129.635 129.483,130.716 128.641,130.709 L 119.377,130.709 C 118.947,130.705 118.528,130.45 118.327,130.07 L 102.649,102.064 C 102.57,101.925 102.519,101.771 102.499,101.613 102.48,101.771 102.429,101.925 102.35,102.064 L 86.6342,130.07 C 86.4387,130.439 86.0388,130.692 85.6215,130.709 L 76.3572,130.709 C 75.5156,130.716 74.8863,129.635 75.3071,128.904 L 90.6476,101.5 75.3071,74.0582 C 74.9394,73.3956 75.388,72.4329 76.132,72.2914 L 76.132,72.2914 Z" 
+              HorizontalOptions="Center" VerticalOptions="Center"/>
+
+
+        <Label Grid.Row="2" 
+               Text="Pasos en los últimos días"
+               FontSize="Large" FontAttributes="Bold"
+               Margin="30"
+               HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <Grid Grid.Row="3"  
+              RowDefinitions="200, 25"
+              ColumnDefinitions="50, 50, 50, 50, 50"
+              ColumnSpacing="25"
+              HorizontalOptions="Center" VerticalOptions="Center" >
+
+            <Rectangle Grid.ColumnSpan="5" 
+                       Fill="WhiteSmoke"
+                       Stroke="Red"
+                       StrokeThickness="1"
+                       StrokeDashArray="10, 5"
+                       StrokeDashOffset="0"
+                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+            <Line Grid.Column="0" 
+                  Aspect="None"
+                  X1="25" Y1="200"
+                  X2="25" Y2="150"
+                  StrokeLineCap="Round"
+                  Stroke="Red"
+                  StrokeThickness="10" />
+            <Label Grid.Row="1" Grid.Column="0"
+                   Text="5.000"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <Line Grid.Column="1" 
+                  Aspect="None"
+                  X1="25" Y1="200"
+                  X2="25" Y2="50"
+                  StrokeLineCap="Round"
+                  Stroke="Red"
+                  StrokeThickness="10" />
+            <Label Grid.Row="1" Grid.Column="1"
+                   Text="15.000"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <Line Grid.Column="2" 
+                  Aspect="None"
+                  X1="25" Y1="200"
+                  X2="25" Y2="75"
+                  StrokeLineCap="Round"
+                  Stroke="Red"
+                  StrokeThickness="10" />
+            <Label Grid.Row="1" Grid.Column="2"
+                   Text="12.500"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <Line Grid.Column="3" 
+                  Aspect="None"
+                  X1="25" Y1="200"
+                  X2="25" Y2="20"
+                  StrokeLineCap="Round"
+                  Stroke="Red"
+                  StrokeThickness="10" />
+            <Label Grid.Row="1" Grid.Column="3"
+                   Text="18.000"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <Line Grid.Column="4" 
+                  Aspect="None"
+                  X1="25" Y1="200"
+                  X2="25" Y2="180"
+                  StrokeLineCap="Round"
+                  Stroke="Red"
+                  StrokeThickness="10" />
+            <Label Grid.Row="1" Grid.Column="4"
+                   Text="2.000"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

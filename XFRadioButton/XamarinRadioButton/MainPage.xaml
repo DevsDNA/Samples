@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRadioButton.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="CustomRadioTemplate">
+                <Grid>
+                    <Ellipse x:Name="CheckedCircle"
+                             Fill="LightSalmon" Stroke="Red" StrokeThickness="2"
+                             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+                    <Ellipse x:Name="UncheckedCircle"
+                             Fill="LightGray" Stroke="Black" StrokeThickness="2"
+                             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+                    <ContentPresenter />
+
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckeState">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="CheckedCircle" Property="IsVisible" Value="True" />
+                                        <Setter TargetName="UncheckedCircle" Property="IsVisible" Value="False" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="CheckedCircle" Property="IsVisible" Value="False" />
+                                        <Setter TargetName="UncheckedCircle" Property="IsVisible" Value="True" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid ColumnDefinitions="120, 120, 120"
+          RowDefinitions="120"
+          Margin="10"
+          VerticalOptions="Center" HorizontalOptions="Center">
+
+        <RadioButton Grid.Column="0"
+                     GroupName="Group1"
+                     ControlTemplate="{StaticResource CustomRadioTemplate}">
+            <RadioButton.Content>
+                <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="Center">
+                    <Image Source="email.png" />
+                    <Label Text="Email" HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </RadioButton.Content>
+        </RadioButton>
+
+        <RadioButton Grid.Column="1"
+                     GroupName="Group1"
+                     ControlTemplate="{StaticResource CustomRadioTemplate}" >
+            <RadioButton.Content>
+                <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="Center">
+                    <Image Source="sms.png" />
+                    <Label Text="SMS" HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </RadioButton.Content>
+        </RadioButton>
+
+        <RadioButton Grid.Column="2"
+                     GroupName="Group1"
+                     ControlTemplate="{StaticResource CustomRadioTemplate}" >
+            <RadioButton.Content>
+                <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="Center">
+                    <Image Source="phoneCall.png" />
+                    <Label Text="Call" HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </RadioButton.Content>
+        </RadioButton>
+
+    </Grid>
+
+</ContentPage>
