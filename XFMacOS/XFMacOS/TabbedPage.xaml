@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XFMacOS.TabbedPage">
+
+    <ContentPage Title="Tab 1" >
+        <Label VerticalOptions="Center" Text="TAB 1"/>
+    </ContentPage>
+
+
+    <ContentPage Title="Tab 2">
+        <Label VerticalOptions="Center" Text="TAB 2"/>
+    </ContentPage>
+
+    <ContentPage Title="Tab 3">
+        <Label VerticalOptions="Center" Text="TAB 3"/>
+    </ContentPage>
+
+</TabbedPage>
