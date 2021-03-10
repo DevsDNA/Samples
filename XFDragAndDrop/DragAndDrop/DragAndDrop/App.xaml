@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:draganddrop="clr-namespace:DragAndDrop"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DragAndDrop.App">
+    <Application.Resources>
+        <draganddrop:DragColorConverter x:Key="DragColorConverter" />
+        <draganddrop:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+    </Application.Resources>
+</Application>
