@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.AccessibleNavigationView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Frame HeightRequest="150" 
+                       Margin="20"
+                       HorizontalOptions="FillAndExpand" >
+
+                    <Grid RowDefinitions="Auto, 40, 40"
+                          ColumnDefinitions="*, *, *">
+
+                        <Label Grid.ColumnSpan="3" 
+                               Text="Interfaz incorrecta" 
+                               FontSize="Subtitle" 
+                               HorizontalTextAlignment="Center"/>
+                        
+                        <Entry Grid.Row="1" Grid.Column="0" Placeholder="1" />
+                        <Entry Grid.Row="1" Grid.Column="1" Placeholder="3" />
+                        <Entry Grid.Row="1" Grid.Column="2" Placeholder="5" />
+                        <Entry Grid.Row="2" Grid.Column="0" Placeholder="2" />
+                        <Entry Grid.Row="2" Grid.Column="1" Placeholder="4" />
+                        <Entry Grid.Row="2" Grid.Column="2" Placeholder="6" />
+                    </Grid>
+                </Frame>
+
+                <Frame HeightRequest="150" 
+                       Margin="20"
+                       HorizontalOptions="FillAndExpand" >
+
+                    <Grid RowDefinitions="Auto, 40, 40"
+                          ColumnDefinitions="*, *, *">
+                        
+                        <Label Grid.ColumnSpan="3" 
+                               Text="Interfaz correcta" 
+                               FontSize="Subtitle" 
+                               HorizontalTextAlignment="Center"/>
+                        
+                        <Entry Grid.Row="1" Grid.Column="0" Placeholder="1" TabIndex="1" />
+                        <Entry Grid.Row="1" Grid.Column="1" Placeholder="3" TabIndex="3"/>
+                        <Entry Grid.Row="1" Grid.Column="2" Placeholder="5" TabIndex="5"/>
+                        <Entry Grid.Row="2" Grid.Column="0" Placeholder="2" TabIndex="2"/>
+                        <Entry Grid.Row="2" Grid.Column="1" Placeholder="4" TabIndex="4"/>
+                        <Entry Grid.Row="2" Grid.Column="2" Placeholder="6" TabIndex="6"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

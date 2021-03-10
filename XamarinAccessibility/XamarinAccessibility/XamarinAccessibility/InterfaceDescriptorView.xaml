@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.InterfaceDescriptorView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Frame HeightRequest="250" 
+                       Margin="20"
+                       HorizontalOptions="FillAndExpand" >
+
+                    <StackLayout>
+                        <Label Grid.ColumnSpan="2" 
+                               Text="Interfaz incorrecta" 
+                               FontSize="Subtitle" 
+                               HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Nombre" />
+                        <Entry />
+
+                        <Label Text="Genero" />
+                        <Picker>
+                            <Picker.Items>
+                                <x:String>Hombre</x:String>
+                                <x:String>Mujer</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <Grid ColumnDefinitions="*, *">
+                            <Button Grid.Column="0" Text="Cancelar" />
+                            <Image Grid.Column="1" Source="ok.png" HeightRequest="50"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HeightRequest="250" 
+                       Margin="20"
+                       HorizontalOptions="FillAndExpand" >
+
+                    <StackLayout>
+                        <Label Text="Interfaz correcta" 
+                               FontSize="Subtitle" 
+                               HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Nombre" AutomationProperties.IsInAccessibleTree="False"/>
+                        <Entry AutomationProperties.Name="Nombre" AutomationProperties.HelpText="Introduzca su nombre"/>
+
+                        <Label Text="Género" AutomationProperties.IsInAccessibleTree="False"/>
+                        <Picker AutomationProperties.Name="Género" AutomationProperties.HelpText="Seleccione su género">
+                            <Picker.Items>
+                                <x:String>Hombre</x:String>
+                                <x:String>Mujer</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <Grid ColumnDefinitions="*, *">
+                            <Button Grid.Column="0" Text="Cancelar" AutomationProperties.HelpText="Cancelar el formulario de datos"/>
+                            <Image Grid.Column="1" Source="ok.png" HeightRequest="50" AutomationProperties.Name="Aceptar" AutomationProperties.HelpText="Aceptar datos introducidos"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

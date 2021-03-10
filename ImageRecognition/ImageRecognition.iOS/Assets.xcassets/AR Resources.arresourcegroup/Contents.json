@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "filename": "AR_DevsDna_Card.arreferenceimage"
+    }
+  ],
+  "GroupedItems": [
+    {
+      "filename": "ARImage.arreferenceimage"
+    }
+  ],
+  "properties": {},
+  "info": {
+    "version": 1,
+    "author": "xcode"
+  }
+}

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.ImageAlternativeTextView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" AutomationProperties.IsInAccessibleTree="False">
+            <Frame HeightRequest="200" 
+                   Margin="20"
+                   BackgroundColor="Blue"
+                   HorizontalOptions="FillAndExpand" >
+
+                <Grid RowDefinitions="50, *">
+
+                    <Label Text="Sin descripción" TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Image Grid.Row="1" 
+                           Aspect="AspectFit"
+                           Source="https://www.devsdna.com/wp-content/uploads/2020/05/logo_03.png"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                </Grid>
+            </Frame>
+
+            <Frame HeightRequest="200" 
+                   Margin="20"
+                   BackgroundColor="Blue"
+                   HorizontalOptions="FillAndExpand" >
+
+                <Grid RowDefinitions="50, *">
+
+                    <Label Text="Con descripción" TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Image Grid.Row="1" 
+                           Aspect="AspectFit"
+                           AutomationProperties.HelpText="Imagen del logo de DevsDNA"
+                           Source="https://www.devsdna.com/wp-content/uploads/2020/05/logo_03.png"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

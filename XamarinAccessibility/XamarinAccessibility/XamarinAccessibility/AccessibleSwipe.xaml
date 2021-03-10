@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.AccessibleSwipe">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Frame HeightRequest="250" 
+                       Margin="20"
+                       HorizontalOptions="FillAndExpand" >
+
+                    <StackLayout>
+                        <Label Text="Funcionalidad no accesible" 
+                               FontSize="Subtitle" 
+                               HorizontalTextAlignment="Center"/>
+                        <SwipeView HeightRequest="60">
+                            <SwipeView.LeftItems>
+                                <SwipeItems Mode="Reveal">
+                                    <SwipeItem Text="Favorito"
+                                               IconImageSource="star.png"
+                                               BackgroundColor="LightGreen"
+                                               Invoked="SwipeItem_Favourite_Invoked" />
+                                    <SwipeItem Text="Eliminar"
+                                               IconImageSource="remove.png"
+                                               BackgroundColor="LightPink"
+                                               Invoked="SwipeItem_Delete_Invoked" />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+
+                            <Grid HeightRequest="60"
+                                  WidthRequest="300"
+                                  BackgroundColor="LightGray">
+                                <Label Text="Mono"
+                                       HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Grid>
+                        </SwipeView>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HeightRequest="250" 
+                       Margin="20"
+                       HorizontalOptions="FillAndExpand" >
+
+                    <StackLayout>
+                        <Label Text="Funcionalidad accesible" 
+                               FontSize="Subtitle" 
+                               HorizontalTextAlignment="Center"/>
+
+                        <Grid ColumnDefinitions="*, 50, 50"
+                              ColumnSpacing="0"
+                              BackgroundColor="LightGray"
+                              HeightRequest="60">
+                            <Label Grid.Column="0" 
+                                   Text="Mono"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                            <ImageButton Grid.Column="1" 
+                                         Source="star.png"
+                                         Aspect="AspectFit"
+                                         AutomationProperties.HelpText="Marcar mono como favorito"
+                                         BackgroundColor="LightGreen" 
+                                         Padding="5"/>
+                            <ImageButton Grid.Column="2" 
+                                         Source="remove.png"
+                                         Aspect="AspectFit"
+                                         AutomationProperties.HelpText="Eliminar mono"
+                                         BackgroundColor="LightPink" 
+                                         Padding="5"/>
+                            
+                        </Grid>
+
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

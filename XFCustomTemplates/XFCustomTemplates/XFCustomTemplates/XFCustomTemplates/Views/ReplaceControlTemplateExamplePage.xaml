@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:XFCustomTemplates.Controls"
+             x:Class="XFCustomTemplates.Views.ReplaceControlTemplateExamplePage">
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="CustomControlTemplate">
+            <Frame BorderColor="Black"
+                   CornerRadius="10"
+                   HasShadow="False"
+                   Padding="5"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <ContentPresenter />
+            </Frame>
+        </ControlTemplate>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center"
+                     Spacing="10"
+                     Padding="10">
+            <controls:CustomControl Title="Jorge"
+                                    Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit dolor, convallis non interdum." />
+
+            <controls:CustomControl Title="Jorge"
+                                    Description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit dolor, convallis non interdum."
+                                    ControlTemplate="{StaticResource CustomControlTemplate}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

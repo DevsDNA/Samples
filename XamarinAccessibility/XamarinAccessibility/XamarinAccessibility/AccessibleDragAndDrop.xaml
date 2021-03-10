@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.AccessibleDragAndDrop">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Frame HeightRequest="150" 
+                       Margin="20"
+                       HorizontalOptions="FillAndExpand" >
+
+                    <StackLayout>
+                        <Label Text="Drad and drop no accesible" 
+                               FontSize="Subtitle" 
+                               HorizontalTextAlignment="Center"/>
+
+                        <Image Source="monkey.png"
+                               HeightRequest="100"
+                               Aspect="AspectFit"
+                               AutomationProperties.IsInAccessibleTree="True"
+                               AutomationProperties.HelpText="Mono"
+                               HorizontalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame HeightRequest="175" 
+                       Margin="20"
+                       HorizontalOptions="FillAndExpand" >
+
+                    <StackLayout Spacing="5">
+                        <Label Text="Drag and drop accesible" 
+                               FontSize="Subtitle" 
+                               HorizontalTextAlignment="Center"/>
+
+                        <Image Source="monkey.png"
+                               HeightRequest="100"
+                               Aspect="AspectFit"
+                               AutomationProperties.IsInAccessibleTree="True"
+                               AutomationProperties.HelpText="Mono"
+                               HorizontalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Grid ColumnDefinitions="*, *">
+                            <Button x:Name="btAddToCart" 
+                                    Text="Carrito"
+                                    AutomationProperties.HelpText="Añadir mono al carrito"
+                                    TextColor="White"
+                                    BackgroundColor="Blue"
+                                    HeightRequest="40" CornerRadius="20"
+                                    Clicked="btAddToCart_Clicked"/>
+                            <Button x:Name="btAddToWishList" Grid.Column="1"
+                                    Text="Deseos"
+                                    AutomationProperties.HelpText="Añadir mono a la lista de deseos"
+                                    TextColor="White"
+                                    BackgroundColor="Blue"
+                                    HeightRequest="40" CornerRadius="20"
+                                    Clicked="btAddToWishList_Clicked"/>
+
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="120, 40"
+                      Margin="10,0">
+
+                    <Image x:Name="imCart" Grid.Row="0" Grid.Column="0" 
+                           Aspect="AspectFit"
+                           HeightRequest="100"
+                           BackgroundColor="Silver"
+                           AutomationProperties.IsInAccessibleTree="True"
+                           AutomationProperties.HelpText="Carrito vacío"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image.GestureRecognizers>
+                            <DropGestureRecognizer AllowDrop="True"
+                                                   Drop="OnCartDrop" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Grid.Row="1" Grid.Column="0"
+                           HorizontalOptions="Center"
+                           Text="Carrito" 
+                           AutomationProperties.IsInAccessibleTree="False"/>
+
+
+                    <Image x:Name="imWishList" Grid.Row="0" Grid.Column="1" 
+                           Aspect="AspectFit"
+                           BackgroundColor="Silver"
+                           AutomationProperties.IsInAccessibleTree="True"
+                           AutomationProperties.HelpText="Lista de deseos vacía"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image.GestureRecognizers>
+                            <DropGestureRecognizer AllowDrop="True"
+                                                   Drop="OnWishListDrop" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Grid.Row="1" Grid.Column="1"
+                           HorizontalOptions="Center"
+                           Text="Deseos"
+                           AutomationProperties.IsInAccessibleTree="False" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAccessibility.TextSizeView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Label Text="Title text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Title"/>
+            <Label Text="Subtitle text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Subtitle" />
+            <Label Text="Large text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Large"/>
+            <Label Text="Header text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Header"/>
+            <Label Text="Body text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Body"/>
+            <Label Text="Medium text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Medium"/>
+            <Label Text="Default text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Default"/>
+            <Label Text="Small text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Small"/>
+            <Label Text="Caption text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Caption"/>
+            <Label Text="Micro text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="Micro"/>
+            <Label Text="Fixed text" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" Margin="0,20" FontSize="20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
