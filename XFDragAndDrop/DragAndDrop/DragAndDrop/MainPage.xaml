@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:local="clr-namespace:DragAndDrop"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DragAndDrop.MainPage">
+
+    <StackLayout>
+        <CollectionView x:Name="ListItems"
+                        IsGrouped="True" ItemsSource="{Binding GroupedItems}">
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ContentView BackgroundColor="Green"
+                                 Padding="0">
+                        <Label Text="{Binding Name}"
+                               TextColor="White"/>
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        Padding="5"
+                        x:DataType="local:ItemViewModel"
+                        BackgroundColor="Azure">
+                        <StackLayout.GestureRecognizers>
+                            <DropGestureRecognizer
+                                AllowDrop="True"
+                                DragLeaveCommand="{Binding BindingContext.ItemDragLeaveCommand, Source={x:Reference ListItems}}"
+                                DragLeaveCommandParameter="{Binding}"
+                                DragOverCommand="{Binding BindingContext.ItemDraggedOverCommand, Source={x:Reference ListItems}}"
+                                DragOverCommandParameter="{Binding}"
+                                Drop="DropGestureRecognizer_Drop_Collection"
+                                DropCommand="{Binding BindingContext.ItemDroppedCommand, Source={x:Reference ListItems}}"
+                                DropCommandParameter="{Binding}" />
+                        </StackLayout.GestureRecognizers>
+                        <Grid
+                            BackgroundColor="LightYellow"
+                            HeightRequest="50"
+                            IsVisible="{Binding IsBeingDraggedOver}" />
+                        <Label
+                            BackgroundColor="{Binding IsBeingDragged, Converter={StaticResource DragColorConverter}}"
+                            FontSize="Large"
+                            HeightRequest="50"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Title}"
+                            VerticalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <DragGestureRecognizer
+                                    CanDrag="True"
+                                    DragStarting="DragGestureRecognizer_DragStarting_Collection"
+                                    DragStartingCommand="{Binding BindingContext.ItemDraggedCommand, Source={x:Reference ListItems}}"
+                                    DragStartingCommandParameter="{Binding}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>                        
+    </StackLayout>
+</ContentPage>
