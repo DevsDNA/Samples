@@ -18,6 +18,12 @@
             Task.Run(async () =>
             {
                 await Task.Delay(TimeSpan.FromSeconds(10));
+                SetProgressAsync(new Data.Builder().PutInt("progress", 0).Build());
+                await Task.Delay(TimeSpan.FromSeconds(10));
+                SetProgressAsync(new Data.Builder().PutInt("progress", 50).Build());
+                await Task.Delay(TimeSpan.FromSeconds(10));
+                SetProgressAsync(new Data.Builder().PutInt("progress", 100).Build());
+
                 return p0.Set(Result.InvokeSuccess());
             });
             return "MyListenableWorker";
