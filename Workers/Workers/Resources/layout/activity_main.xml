@@ -13,7 +13,7 @@
         android:minHeight="25px"
         android:id="@+id/button1"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp" />    
     <Button
         android:text="Create Listenable work"
         android:layout_width="match_parent"

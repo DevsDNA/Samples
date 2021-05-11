@@ -8,6 +8,8 @@
     using AndroidX.Lifecycle;
     using AndroidX.Work;
     using global::Workers.Workers;
+    using Java.Lang;
+    using Java.Util.Concurrent;
     using System;
     using System.Linq;
 
@@ -31,17 +33,19 @@
             Button createWork = FindViewById<Button>(Resource.Id.button1);
             createWork.Click += (sender, e) =>
             {
+                textView.Text = string.Empty;
                 var oneTimeWorkRequest = new OneTimeWorkRequest.Builder(typeof(MyWorker))
-               .AddTag("MyListenableWorker")
+               .AddTag("MyWorker")
                .SetInitialDelay(TimeSpan.FromSeconds(10))
                .Build();
 
-                workerManager.BeginUniqueWork("MyListenableWorker", ExistingWorkPolicy.Keep, oneTimeWorkRequest).Enqueue();
+                workerManager.BeginUniqueWork("MyWorker", ExistingWorkPolicy.Replace, oneTimeWorkRequest).Enqueue();
             };
 
             Button createListenableWork = FindViewById<Button>(Resource.Id.button2);
             createListenableWork.Click += (sender, e) =>
             {
+                textView.Text = string.Empty;
                 var periodicWorkRequest =
                   new PeriodicWorkRequest.Builder(typeof(MyListenableWorker), TimeSpan.FromSeconds(1))
                   .AddTag("MyListenableWorker")
