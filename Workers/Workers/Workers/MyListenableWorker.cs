@@ -17,13 +17,11 @@
         {
             Task.Run(async () =>
             {
-                await Task.Delay(TimeSpan.FromSeconds(10));
-                SetProgressAsync(new Data.Builder().PutInt("progress", 0).Build());
-                await Task.Delay(TimeSpan.FromSeconds(10));
-                SetProgressAsync(new Data.Builder().PutInt("progress", 50).Build());
-                await Task.Delay(TimeSpan.FromSeconds(10));
-                SetProgressAsync(new Data.Builder().PutInt("progress", 100).Build());
-
+                for (int i = 0; i < 100; i++)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(1));
+                    SetProgressAsync(new Data.Builder().PutInt("progress", i).Build());
+                }
                 return p0.Set(Result.InvokeSuccess());
             });
             return "MyListenableWorker";

@@ -8,24 +8,26 @@
     using AndroidX.Lifecycle;
     using AndroidX.Work;
     using global::Workers.Workers;
-    using Java.Lang;
-    using Java.Util.Concurrent;
     using System;
-    using System.Collections.Generic;
+    using System.Linq;
 
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, IObserver, IRunnable, IExecutor
+    public class MainActivity : AppCompatActivity, IObserver
     {
+        private WorkManager workerManager;
         private ProgressBar progressBar;
+        private TextView textView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            var workerManager = WorkManager.GetInstance(Application.Context);
-
-            // Set our view from the "main" layout resource
+            workerManager = WorkManager.GetInstance(Application.Context);
+            workerManager.CancelAllWork();
+            workerManager.PruneWork();
             SetContentView(Resource.Layout.activity_main);
-            //EditText phoneNumberText = FindViewById<EditText>(Resource.Id.);
+
+            progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
+            textView = FindViewById<TextView>(Resource.Id.textView1);
             Button createWork = FindViewById<Button>(Resource.Id.button1);
             createWork.Click += (sender, e) =>
             {
@@ -34,9 +36,7 @@
                .SetInitialDelay(TimeSpan.FromSeconds(10))
                .Build();
 
-                workerManager
-                    .BeginUniqueWork("MyListenableWorker", ExistingWorkPolicy.Keep
-                    , oneTimeWorkRequest).Enqueue();
+                workerManager.BeginUniqueWork("MyListenableWorker", ExistingWorkPolicy.Keep, oneTimeWorkRequest).Enqueue();
             };
 
             Button createListenableWork = FindViewById<Button>(Resource.Id.button2);
@@ -55,10 +55,8 @@
             cancelListenableWork.Click += (sender, e) =>
             {
                 var data = workerManager.GetWorkInfosByTag("MyListenableWorker");
-
                 workerManager.CancelAllWorkByTag("MyListenableWorker");
-            };
-            progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
+            };            
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -76,25 +74,17 @@
                 if (workInfo.Tags.Contains("MyListenableWorker"))
                 {
                     var state = workInfo.GetState();
-                    if (state.Name() == "CANCELLED")
+                    textView.Text = $"{workInfo.Tags.Last()} > {state.Name()} | {textView.Text}";
+                    if (state.Name() != "CANCELLED")
                     {
-
+                        progressBar.Progress = workInfo.Progress.GetInt("progress", 0);
                     }
                     else
                     {
-
+                        workerManager.PruneWork();
                     }
-                    
                 }
             }
-        }
-
-        public void Run()
-        {
-        }
-
-        public void Execute(IRunnable command)
-        {
         }
     }
 }

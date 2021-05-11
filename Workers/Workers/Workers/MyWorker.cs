@@ -13,6 +13,7 @@
         public override Result DoWork()
         {
             Debug.WriteLine("My Worker");
+            
             return Result.InvokeSuccess();
         }
     }
