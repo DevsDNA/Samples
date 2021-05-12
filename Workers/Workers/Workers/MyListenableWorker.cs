@@ -17,8 +17,12 @@
         {
             Task.Run(async () =>
             {
-                await Task.Delay(TimeSpan.FromSeconds(10));
-                return p0.Set(Result.InvokeSuccess());
+                for (int i = 0; i < 20; i++)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(1));
+                    SetProgressAsync(new Data.Builder().PutInt("progress", i*5).Build());
+                }
+                return p0.Set(Result.InvokeRetry());
             });
             return "MyListenableWorker";
         }
