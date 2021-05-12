@@ -20,9 +20,9 @@
                 for (int i = 0; i < 20; i++)
                 {
                     await Task.Delay(TimeSpan.FromSeconds(1));
-                    SetProgressAsync(new Data.Builder().PutInt("progress", i).Build());
+                    SetProgressAsync(new Data.Builder().PutInt("progress", i*5).Build());
                 }
-                return p0.Set(Result.InvokeSuccess());
+                return p0.Set(Result.InvokeRetry());
             });
             return "MyListenableWorker";
         }
