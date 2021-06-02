@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             BackgroundColor="#F0F0F3"
+             x:Class="Shadows.Sample.MainPage">
+    <StackLayout Padding="50" Spacing="30">
+        
+        <sh:Shadows CornerRadius="30" Shades="{sh:SingleShade Offset='-10,-5', Opacity=0.5, Color=Red,BlurRadius=20}">
+            <Frame CornerRadius="30" BackgroundColor="Violet"/>
+        </sh:Shadows>
+
+        <sh:Shadows CornerRadius="10">
+            <sh:Shadows.Shades>
+                <sh:ImmutableShades>                    
+                    <sh:Shade BlurRadius="20" Opacity="0.5" Offset="0,10" Color="Red"/>
+                    <sh:Shade BlurRadius="20" Opacity="0.5" Offset="10,0" Color="Blue"/>
+                    <sh:Shade BlurRadius="20" Opacity="0.5" Offset="0,-10" Color="Green"/>
+                    <sh:Shade BlurRadius="20" Opacity="0.5" Offset="-10,0" Color="Yellow"/>
+                </sh:ImmutableShades>
+            </sh:Shadows.Shades>            
+            <Frame CornerRadius="30" BackgroundColor="Violet"/>
+        </sh:Shadows>
+
+
+        <sh:Shadows CornerRadius="10" Shades="{sh:NeumorphismShades}">
+            <Button WidthRequest="120" HeightRequest="60" HorizontalOptions="Center"
+                    VerticalOptions="Center" CornerRadius="10" Text="Hello" 
+                    TextColor="Gray" BackgroundColor="#F0F0F3"/>
+        </sh:Shadows>
+
+
+        <sh:Shadows x:Name="DynamicShadow" CornerRadius="10">
+            <sh:Shadows.Shades>
+                <sh:ShadeStack/>
+            </sh:Shadows.Shades>
+            <Button WidthRequest="120" HeightRequest="60" HorizontalOptions="Center"
+                    VerticalOptions="Center" CornerRadius="10" Text="Hello" 
+                    TextColor="Gray" BackgroundColor="#F0F0F3" Clicked="Button_Clicked"/>
+        </sh:Shadows>
+
+    </StackLayout>
+</ContentPage>
