@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFVisualStates.MainPage">
+    <StackLayout Margin="40" VerticalOptions="FillAndExpand">
+
+        <Label TextColor="Yellow" Text="Default" />
+        <Label TextColor="Blue" Text="Normal" />
+        <Label TextColor="Red" Text="Focused" />
+        <Label TextColor="Orange" Text="Disabled" />
+        <Label TextColor="Green" Text="WithText" />
+        <Label TextColor="Black" Text="WithoutText" />
+
+
+        <Entry x:Name="TxtCommonStates"
+               BackgroundColor="Yellow"
+               Margin="0,50,0,0"
+               HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Blue" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Focused">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Red" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Orange" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Entry>
+
+        <Entry x:Name="TxtCustomStates"
+               BackgroundColor="Yellow"
+               HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CustomStates">
+                    <VisualState x:Name="WithText">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Green" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="WithoutText">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Black" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Entry>
+
+        <Entry x:Name="TxtMergeStates"
+               BackgroundColor="Yellow"
+               HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Blue" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Focused">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Red" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Orange" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CustomStates">
+                    <VisualState x:Name="WithText">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Green" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="WithoutText">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Black" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Entry>
+
+        <Button x:Name="BtnDisableControls"
+                Text="Disable controls." />
+    </StackLayout>
+</ContentPage>

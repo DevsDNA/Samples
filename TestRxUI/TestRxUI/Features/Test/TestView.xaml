@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<rxui:ReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                          x:Class="TestRxUI.Features.Test.TestView"
+                          xmlns:features="clr-namespace:TestRxUI.Features.Test"
+                          x:TypeArguments="features:TestViewModel">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Entry x:Name="enOperatorA" Placeholder="Operator A" />
+            <Entry x:Name="enOperatorB" Placeholder="Operator B" />
+            <Label x:Name="lbResult" />
+            <Button x:Name="btSlow" Text="Slow" />
+            <Button x:Name="btQuick" Text="Quick" />
+            <ActivityIndicator x:Name="aiBusy" />
+        </StackLayout>
+    </ContentPage.Content>
+</rxui:ReactiveContentPage>

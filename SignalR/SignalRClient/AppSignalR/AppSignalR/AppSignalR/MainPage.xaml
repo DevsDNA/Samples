@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSignalR.MainPage">
+
+    <StackLayout Margin="10,50" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label x:Name="lbState" />
+        <Entry x:Name="enId" Placeholder="Device id" Keyboard="Numeric"/>
+        <Button x:Name="btConnect" Text="Connect" Clicked="btConnect_Clicked" />
+        <Entry x:Name="enMessage" Margin="0,50,0,0" Placeholder="Text menssage" />
+        <Button x:Name="btSentToAll" Text="Send to all" Clicked="btSentToAll_Clicked" />
+        <Entry x:Name="enTargetId" Margin="0,50,0,0" Placeholder="Target device id" Keyboard="Numeric"/>
+        <Button x:Name="btSentToDevice" Text="Send to device" Clicked="btSentToDevice_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
