@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFSwipe.MainPage">
+    <StackLayout>
+        <SwipeView>
+            <SwipeView.RightItems>
+                <SwipeItems Mode="Reveal">
+                    <SwipeItem x:Name="deleteSwipe" Text="borrar" BackgroundColor="Red"/>
+                    <SwipeItem x:Name="editSwipe" Text="editar" BackgroundColor="Blue"/>
+                </SwipeItems>
+            </SwipeView.RightItems>
+            <SwipeView.LeftItems>
+                <SwipeItems Mode="Execute">
+                    <SwipeItem x:Name="favouriteSwipe" Text="marcar favorito" BackgroundColor="Yellow"/>
+                </SwipeItems>
+            </SwipeView.LeftItems>
+
+            <Frame HeightRequest="40" HasShadow="True" Margin="10" CornerRadius="10"
+               BackgroundColor="Azure">
+                <Grid>
+                    <Label x:Name="lblText" Text="Esto es un texto de solo lectura."
+                       VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="txtEdit" Text="{Binding Text, Source={x:Reference lblText}, Mode=TwoWay}"
+                       VerticalOptions="Center" IsVisible="False"/>
+                    <BoxView x:Name="shapeFavourite" WidthRequest="10" HeightRequest="10" CornerRadius="5" Color="Yellow"
+                         VerticalOptions="Start" HorizontalOptions="Start" IsVisible="False"/>
+                </Grid>
+            </Frame>
+        </SwipeView>
+    </StackLayout>
+</ContentPage>
