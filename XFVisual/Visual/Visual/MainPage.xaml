@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Visual.MainPage"
+            BackgroundColor="Black"  >
+
+    <Grid ColumnDefinitions="auto, *,*" Margin="10">
+
+        <StackLayout>
+            <Button Text="Metro" Visual="Metro"/>
+        </StackLayout>
+        
+        <StackLayout Visual="Material" Grid.Column="1" Spacing="15">
+            <Button Text="Material"/>
+            <ActivityIndicator HeightRequest="10" WidthRequest="10" IsRunning="True"/>
+            <CheckBox />
+            <Frame HeightRequest="30"/>
+            <Picker/>
+            <ProgressBar Progress="0.5"/>
+            <Slider Value="20" Minimum="0" Maximum="100"/>
+            <Stepper/>
+            <TimePicker/>
+            <Editor Placeholder="Material"/>
+            <Entry Placeholder="Material"/>
+        </StackLayout>
+
+        <StackLayout Visual="Default" Grid.Column="2" Spacing="15">
+            <Button Text="Default"/>
+            <ActivityIndicator HeightRequest="10" WidthRequest="10" IsRunning="True"/>
+            <CheckBox />
+            <Frame HeightRequest="30"/>
+            <Picker/>
+            <ProgressBar Progress="0.5"/>
+            <Slider Value="20" Minimum="0" Maximum="100"/>
+            <Stepper/>
+            <TimePicker/>
+            <Editor Placeholder="Default"/>
+            <Entry Placeholder="Default"/>
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>
