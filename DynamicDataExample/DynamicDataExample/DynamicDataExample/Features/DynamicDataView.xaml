@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:base="clr-namespace:DynamicDataExample.Base"                      
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:features="clr-namespace:DynamicDataExample.Features"
+                      x:TypeArguments="features:DynamicDataViewModel"
+                      x:Class="DynamicDataExample.Features.DynamicDataView">
+    <Grid RowDefinitions="Auto,*"
+          ColumnDefinitions="*,Auto"
+          RowSpacing="5"
+          ColumnSpacing="5"
+          Padding="20">
+
+        <Entry x:Name="enSearch" Grid.Row="0" Grid.Column="0"
+               Placeholder="Buscar"
+               Keyboard="Default"
+               ReturnType="Search" />
+
+        <Picker x:Name="pkSort" Grid.Row="0" Grid.Column="1" />
+
+
+        <CollectionView x:Name="cvAll" Grid.Row="1" Grid.ColumnSpan="2"
+                        Margin="0" 
+                        VerticalScrollBarVisibility="Never" RemainingItemsThreshold="5" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="Auto,Auto,1"
+                          Padding="20,5">
+                        <Label Grid.Row="0" 
+                               Text="{Binding Name}"
+                               FontAttributes="Bold"
+                               HorizontalOptions="FillAndExpand" />
+
+                        <Label Grid.Row="1"
+                               Text="{Binding Age}"
+                               HorizontalOptions="FillAndExpand" />
+
+                        <BoxView Grid.Row="2"
+                                 Color="LightGray"
+                                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</base:BaseContentPage>
