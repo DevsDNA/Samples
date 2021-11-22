@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClipingViewElements.MainPage"
+             BackgroundColor="Gray">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="https://yt3.ggpht.com/ytc/AKedOLQ1a5UamG0PkQ4U9yTGKOt3rmK3acVX0ILQgqN-=s900-c-k-c0x00ffffff-no-rj"
+                   HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="300" WidthRequest="300">
+            <Image.Clip>
+                <RoundRectangleGeometry Rect="0,0,300,300" CornerRadius="60,0,0,60"/>
+            </Image.Clip>
+        </Image>
+        <SearchBar Placeholder="Buscar" BackgroundColor="AliceBlue" HorizontalOptions="Center" WidthRequest="300" HeightRequest="50">
+            <SearchBar.Clip>
+                <RoundRectangleGeometry Rect="0,0,300,50" CornerRadius="20,0,0,20"/>
+            </SearchBar.Clip>
+        </SearchBar>
+    </StackLayout>
+</ContentPage>
