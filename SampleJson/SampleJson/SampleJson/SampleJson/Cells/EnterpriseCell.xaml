@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+	  xmlns:models="clr-namespace:SampleJson.Models"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	  x:Class="SampleJson.Cells.EnterpriseCell"
+	  x:DataType="models:Enterprise"
+	  RowDefinitions="Auto, Auto, Auto, *, 1"
+	  Margin="5">
+
+	<Label Grid.Row="0" FontSize="Micro">
+		<Label.FormattedText>
+			<FormattedString>
+				<FormattedString.Spans>
+					<Span Text="INTERNAL ID: " FontAttributes="Bold" />
+					<Span Text="{Binding Id} " FontAttributes="Bold" />
+					<Span Text=" || JSON ID: " FontAttributes="Bold" />
+					<Span Text="{Binding JsonId}" FontAttributes="Bold" />
+				</FormattedString.Spans>
+			</FormattedString>
+		</Label.FormattedText>
+	</Label>
+	
+	<Label Grid.Row="1" Text="{Binding FullCompanyName}" FontAttributes="Bold" FontSize="Title" />
+	
+	<Label Grid.Row="2" TextType="Html" Text="{Binding Description}" FontSize="Subtitle" />
+
+	<FlexLayout x:Name="FlexPersons" Grid.Row="3" BindableLayout.ItemsSource="{Binding Persons}"
+				AlignContent="Start" AlignItems="Start" Direction="Row" Wrap="Wrap"
+				HorizontalOptions="Start">
+		<BindableLayout.ItemTemplate>
+			<DataTemplate x:DataType="x:String">
+				<Label Text="{Binding .}" FontAttributes="Italic" FontSize="Small" Margin="5,0" />
+			</DataTemplate>
+		</BindableLayout.ItemTemplate>
+	</FlexLayout>
+
+	<BoxView Grid.Row="4" Color="Green" />
+</Grid>

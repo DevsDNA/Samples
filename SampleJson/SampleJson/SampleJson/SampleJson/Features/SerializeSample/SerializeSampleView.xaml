@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:cells="clr-namespace:SampleJson.Cells"
+             xmlns:models="clr-namespace:SampleJson.Models"
+             xmlns:uwp="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="SampleJson.Features.SerializeSample.SerializeSampleView"	 
+			 uwp:ListView.SelectionMode="Inaccessible">
+	<Grid ColumnDefinitions="*,*" RowDefinitions="Auto, *" ColumnSpacing="20" Margin="20">
+
+		<Label x:Name="LblSystemText" Text="System.Text.Json" FontSize="Title" HorizontalOptions="Center" />
+		<CollectionView x:Name="ListSystemText" Grid.Row="1">
+			<CollectionView.ItemTemplate>
+				<DataTemplate>
+					<cells:EnterpriseCell/>
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
+
+		<Label x:Name="LblNewtonsoft" Grid.Column="1" Text="Newtonsoft" FontSize="Title" HorizontalOptions="Center" />
+		<CollectionView x:Name="ListNewtonsoft" Grid.Column="1" Grid.Row="1">
+			<CollectionView.ItemTemplate>
+				<DataTemplate>
+					<cells:EnterpriseCell/>
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
+	</Grid>
+</ContentPage>
