@@ -11,9 +11,9 @@
 			InitializeComponent();
 		}
 
-		protected override async void OnAppearing()
+
+		private async void Button_Clicked(object sender, System.EventArgs e)
 		{
-			base.OnAppearing();
 			if (CrossInAppBilling.IsSupported)
 			{
 				var billing = CrossInAppBilling.Current;
@@ -22,7 +22,7 @@
 					var connected = await billing.ConnectAsync();
 					if (connected)
 					{
-						var subscriptionsList = await billing.GetProductInfoAsync(ItemType.Subscription, new string[] { "demo_suscription_1", "demo_suscription_2" });
+						var subscriptionsList = await billing.GetProductInfoAsync(ItemType.InAppPurchase, new string[] { "demo_product" });
 						if (subscriptionsList.Any())
 						{
 
