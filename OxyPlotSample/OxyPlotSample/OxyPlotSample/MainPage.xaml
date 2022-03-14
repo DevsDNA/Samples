@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:oxyPlot="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="OxyPlotSample.MainPage">
+	<Grid RowDefinitions="*,40,*">
+
+		<oxyPlot:PlotView x:Name="OxyPlotClientsYear" Grid.Row="0" Grid.ColumnSpan="2" 
+						  Margin="0,40" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+		<Button x:Name="BtnLeft" Grid.Row="1" Grid.Column="0" Text="-1" TextColor="Red" BackgroundColor="AliceBlue" CommandParameter="-" />
+		<Button x:Name="BtnRigth" Grid.Row="1" Grid.Column="1" Text="+1" TextColor="Red" BackgroundColor="AliceBlue" CommandParameter="+" />
+
+		<oxyPlot:PlotView x:Name="OxyPlotClientsForMonthYear" Grid.Row="2" Grid.ColumnSpan="2" 
+						  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+	</Grid>
+</ContentPage>
