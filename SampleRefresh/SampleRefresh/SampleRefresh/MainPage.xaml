@@ -8,7 +8,7 @@
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
-							<Label Text="{Binding .}" Margin="10" />
+							<Label Text="{Binding .}" LineBreakMode="TailTruncation" Margin="10" />
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
