@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleFlex.SampleScreen">
+	<FlexLayout BackgroundColor="Green" Direction="Column" Wrap="NoWrap" JustifyContent="SpaceBetween" AlignContent="Stretch" AlignItems="Stretch"
+				HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+		<!-- Header -->
+		<Label Text="HEADER"
+               FontSize="Large"
+               BackgroundColor="Aqua"
+               HorizontalTextAlignment="Center"
+			   Padding="20"/>
+
+		<!-- Content -->
+		<FlexLayout FlexLayout.Basis="50%" BackgroundColor="White" Direction="Column" Wrap="NoWrap" JustifyContent="SpaceEvenly" AlignContent="Center" AlignItems="Center"
+					Margin="20" HorizontalOptions="FillAndExpand">
+			<Label Text="User"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+			<Entry FlexLayout.AlignSelf="Stretch" Placeholder="User"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+			<Label Text="Password"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+			<Entry FlexLayout.AlignSelf="Stretch" Placeholder="Password"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+
+			<Button FlexLayout.AlignSelf="Stretch" Text="Login" 
+					Margin="10"/>
+		</FlexLayout>
+
+		<!-- Footer -->
+		<Label Text="FOOTER"
+               FontSize="Large"
+               BackgroundColor="Pink"
+               HorizontalTextAlignment="Center" 
+			   Padding="20"/>
+	</FlexLayout>
+</ContentPage>

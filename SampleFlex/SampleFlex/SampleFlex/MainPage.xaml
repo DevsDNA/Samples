@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleFlex.MainPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="FontSize" Value="Medium" />
+				<Setter Property="TextColor" Value="Yellow" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+				<Setter Property="VerticalTextAlignment" Value="Center" />
+				<Setter Property="BackgroundColor" Value="Blue" />
+				<Setter Property="Padding" Value="5" />
+				<Setter Property="Margin" Value="5" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<Grid RowDefinitions="*,*">
+		<!--Direction:		Orientación.-->
+		<!--Wrap:			Permite multiples columnas o filas.-->
+		<!--JustifyContent:	Posición del contenido.-->
+		<!--AlignContent:	Alinea la fila o columna.-->
+		<!--AlignItems:		Alinea el item dentro de su posición.-->
+		<FlexLayout Grid.Row="0" BackgroundColor="Green" 
+					Direction="Row" Wrap="Wrap" JustifyContent="SpaceEvenly" AlignContent="SpaceEvenly" AlignItems="Center">
+			<Label Text="1" WidthRequest="130" HeightRequest="50" />
+			<Label Text="2" WidthRequest="120" HeightRequest="60" />
+			<Label Text="3" WidthRequest="110" HeightRequest="30" />
+			<Label Text="4" WidthRequest="100" HeightRequest="40" />
+			<Label Text="5" WidthRequest="110" HeightRequest="50" />
+			<Label Text="6" WidthRequest="120" HeightRequest="60" />
+		</FlexLayout>
+
+		<!--AlignSelf:	Alineación individual.-->
+		<!--Order:		Orden de los elementos. El número no es posición sino peso.-->
+		<!--Basis:		Tamaño del item. Por defecto Auto.-->
+		<!--Grow:		Prioridad de crecimiento restante. Por defecto 0.-->
+		<!--Shrink:		Prioridad de crecimiento. Por defecto 1.-->
+		<FlexLayout BackgroundColor="Red" Grid.Row="1" Direction="Row" Wrap="Wrap" JustifyContent="SpaceAround" AlignContent="Center" AlignItems="Center">
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="1" FlexLayout.Shrink="1" Text="1" WidthRequest="110" HeightRequest="50" />
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="0" FlexLayout.Shrink="1" Text="2" WidthRequest="120" HeightRequest="50" />
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="2" FlexLayout.Shrink="1" Text="3" WidthRequest="130" HeightRequest="50" />
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="0" FlexLayout.Shrink="1" Text="4" WidthRequest="140" HeightRequest="50" />
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="3" FlexLayout.Shrink="1" Text="5" WidthRequest="150" HeightRequest="50" />
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="0" FlexLayout.Shrink="1" Text="6" WidthRequest="160" HeightRequest="50" />
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="0" FlexLayout.Shrink="1" Text="7" WidthRequest="100" HeightRequest="50" />
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="0" FlexLayout.Shrink="1" Text="8" WidthRequest="100" HeightRequest="50" />
+			<Label FlexLayout.Order="0" FlexLayout.Basis="Auto" FlexLayout.Grow="1" FlexLayout.Shrink="1" Text="9" WidthRequest="100" HeightRequest="50" />
+		</FlexLayout>
+	</Grid>
+</ContentPage>
