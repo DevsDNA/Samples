@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleRefresh.MainPage">
+	<Grid RowDefinitions="*,2*">
+		<RefreshView x:Name="RefreshLeft" Grid.Column="0">
+			<ListView x:Name="LeftList">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Label Text="{Binding .}" Margin="10" />
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+				<ListView.ItemsSource>
+					<x:Array Type="{x:Type x:String}">
+						<x:String>Izquierda 1</x:String>
+						<x:String>Izquierda 3</x:String>
+						<x:String>Izquierda 2</x:String>
+						<x:String>Izquierda 4</x:String>
+						<x:String>Izquierda 5</x:String>
+						<x:String>Izquierda 6</x:String>
+						<x:String>Izquierda 7</x:String>
+						<x:String>Izquierda 8</x:String>
+						<x:String>Izquierda 9</x:String>
+					</x:Array>
+				</ListView.ItemsSource>
+			</ListView>
+		</RefreshView>
+
+		<RefreshView x:Name="RefreshCenter" Grid.Column="1">
+			<CollectionView>
+				<CollectionView.ItemTemplate>
+					<DataTemplate>
+						<Label Text="{Binding .}" Margin="10" />
+					</DataTemplate>
+				</CollectionView.ItemTemplate>
+				<CollectionView.ItemsSource>
+					<x:Array Type="{x:Type x:String}">
+						<x:String>Centro 1</x:String>
+						<x:String>Centro 2</x:String>
+						<x:String>Centro 3</x:String>
+						<x:String>Centro 4</x:String>
+						<x:String>Centro 5</x:String>
+						<x:String>Centro 6</x:String>
+						<x:String>Centro 7</x:String>
+						<x:String>Centro 8</x:String>
+						<x:String>Centro 9</x:String>
+					</x:Array>
+				</CollectionView.ItemsSource>
+			</CollectionView>
+		</RefreshView>
+
+		<RefreshView x:Name="RefreshRight" Grid.Column="2">
+			<ScrollView>
+				<StackLayout>
+					<Label Text="Derecha 1" />
+					<Label Text="Derecha 2" />
+					<Label Text="Derecha 3" />
+					<Label Text="Derecha 4" />
+					<Label Text="Derecha 5" />
+					<Label Text="Derecha 6" />
+					<Label Text="Derecha 7" />
+					<Label Text="Derecha 8" />
+					<Label Text="Derecha 9" />
+				</StackLayout>
+			</ScrollView>
+		</RefreshView>
+	</Grid>
+</ContentPage>
